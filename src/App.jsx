@@ -5,16 +5,28 @@ import Cardlist from "./components/Cardlist"
 import films from "./data";
 
 class MovieDB extends Component {
-  state = {  }
+  state = { 
+    films: []
+   }
 
-  fetchMovies = () => {
-    alert("the button works")
+  fetchMovies = (searchterm) => {
+
+    fetch("http://www.omdbapi.com/?s=green&y=2000&apikey=2e1d8a0d")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.Search)
+      this.setState({
+        films: data.Search
+      });
+    })
+    .catch(error => console.log(error))
+
   }
 
 
   render() { 
 
-    const exampleFilm = films[0]
+  
 
     return ( 
       <div>
@@ -24,11 +36,19 @@ class MovieDB extends Component {
 
         <button onClick={this.fetchMovies}>Fetch info from Api</button>
 
-        <h2>Title: {exampleFilm.Title}</h2>
-        <p>Year: {exampleFilm.Year}</p>
-        <p>IMDB ID: {exampleFilm.imdbID}</p>
-        <p>Type: {exampleFilm.Type}</p>
-        <img src={exampleFilm.Poster} alt="poster"/>
+        {this.state.films.map((film, index) => {
+          return (
+            <section key={index}>
+            <h2>Title: {film.Title}</h2>
+            <p>Year: {film.Year}</p>
+            <p>IMDB ID: {film.imdbID}</p>
+            <p>Type: {film.Type}</p>
+            <img src={film.Poster} alt="poster"/>
+            </section>
+          )
+        })}
+
+        
 
       </div>
 
