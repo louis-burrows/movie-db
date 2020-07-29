@@ -7,6 +7,7 @@ class Searchbar extends Component {
     return ( 
       <div>
         <p className={styles.search}>Searchbar</p>
+
       </div>
      );
   }
