@@ -24,15 +24,17 @@ class MovieDB extends Component {
     .catch(error => console.log(error))
   }
 
-  updateSearchText = () => {
+  // https://reactjs.org/docs/forms.html
+
+  updateSearchText = (e) => {
     this.setState({
-      searchText: 
+      searchText: e
     });
   }
 
-  updateSearchYear = () => {
+  updateSearchYear = (e) => {
     this.setState({
-      searchYear: 
+      searchYear: e
     });
   }
 
@@ -45,8 +47,11 @@ class MovieDB extends Component {
         <p>The App</p>
         <Searchbar />
         <Cardlist />
+
+ 
+         
         
-        <input type="text" placeholder="enter a search word" onInput={(e) => updateSearchText(e.target.value)}/>
+        <input type="text" placeholder="enter a search word" onInput={(e) => updateSearchText(e.target.value)} />
 
         <input type="text" placeholder="enter a year" onInput={(e) => updateSearchYear(e.target.value)}/>
 
