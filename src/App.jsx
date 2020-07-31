@@ -8,12 +8,16 @@ class MovieDB extends Component {
   state = { 
     films: [],
     searchText: "",
-    searchYear: "",
    }
 
+  // ternary operator
+  // ifNoSearchText = () => {
+  //   this.state.searchText ? this.fetchMovies() : null;
+  // }
 
-  fetchMovies = (searchText, searchYear) => {
-    fetch(`http://www.omdbapi.com/?s=${searchText}&y=${searchYear}&apikey=2e1d8a0d`)
+
+  fetchMovies = () => {
+    fetch(`http://www.omdbapi.com/?s=${this.state.searchText}&apikey=2e1d8a0d`)
     .then(response => response.json())
     .then(data => {
       console.log(data.Search)
@@ -26,20 +30,22 @@ class MovieDB extends Component {
 
   // https://reactjs.org/docs/forms.html
 
-  updateSearchText = (e) => {
+  updateSearchText = (textInput) => {
     this.setState({
-      searchText: e
+        searchText: textInput
     });
   }
 
-  updateSearchYear = (e) => {
-    this.setState({
-      searchYear: e
-    });
-  }
+  // updateSearchYear = (e) => {
+  //   this.setState({
+  //     searchYear: e
+  //   });
+  // }
 
 
   render() { 
+
+    console.log(this.state.searchText)
 
     return ( 
       <div>
@@ -51,9 +57,9 @@ class MovieDB extends Component {
  
          
         
-        <input type="text" placeholder="enter a search word" onInput={(e) => updateSearchText(e.target.value)} />
+        <input type="text" placeholder="enter a search word" onInput={(e) => this.updateSearchText(e.target.value)} />
 
-        <input type="text" placeholder="enter a year" onInput={(e) => updateSearchYear(e.target.value)}/>
+        {/* <input type="text" placeholder="enter a year" onInput={(e) => updateSearchYear(e.target.value)}/> */}
 
         <button onClick={this.fetchMovies}>Fetch info from Api</button>
 
