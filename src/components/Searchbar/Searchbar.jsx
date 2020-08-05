@@ -6,9 +6,12 @@ class Searchbar extends Component {
   render() { 
     return ( 
       <div>
-        <p className={styles.search}>Searchbar</p>
-        <input type="text" onChange={this.props.updateInput} />
 
+        {/* functions are passed to both the input box and button, and these will run in App.jsx and set the state in App */}
+
+        <p className={styles.search}>Searchbar</p>
+        <input type="text" onInput={this.props.updateSearchText} />
+        <button onClick={this.props.handleClick}>Fetch info from Api</button>
       </div>
      );
   }

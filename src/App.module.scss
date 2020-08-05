@@ -1,3 +1,17 @@
-p {
-  color: red;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: rgb(253, 245, 198);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+// background: rgb(67,33,181);
+// background: linear-gradient(90deg, rgba(67,33,181,0.58) 0%, rgba(55,41,196,0.55) 21%, rgba(59,160,201,0.52) 60%, rgba(91,246,112,0.26) 100%);
+
+.appContainer {
+  padding: 5px
+
+
+}
+

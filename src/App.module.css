@@ -1,0 +1,13 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fdf5c6;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.appContainer {
+  padding: 5px;
+}
+/*# sourceMappingURL=App.module.css.map */

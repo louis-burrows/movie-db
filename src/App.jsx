@@ -2,19 +2,35 @@ import React, { Component } from 'react';
 import styles from "./App.module.scss";
 import Searchbar from "./components/Searchbar";
 import Cardlist from "./components/Cardlist"
+import temporaryFilms from "./temporaryFilms"
 
 
 class MovieDB extends Component {
   state = { 
     films: [],
     searchText: "",
-   }
+  }
+
+  
+
+  // the below two fucntions are in-progress attempts to make the page show movies prior to there being any searchs
+
+  // showSomethingBeforesearch = () => {
+  //   if (!this.state.searchText) {
+  //     this.setState({
+  //       films: temporaryFilms
+  //     })
+  //   }
+  // }
+
 
   // ternary operator
   // ifNoSearchText = () => {
   //   this.state.searchText ? this.fetchMovies() : null;
   // }
 
+
+  // this function grabs data from the API in accordance to the text entered in the searchbar, and is run when the button is pressed
 
   fetchMovies = () => {
     fetch(`http://www.omdbapi.com/?s=${this.state.searchText}&apikey=2e1d8a0d`)
@@ -28,50 +44,28 @@ class MovieDB extends Component {
     .catch(error => console.log(error))
   }
 
-  // https://reactjs.org/docs/forms.html
+
+  // this function updates the state of searchText with each input witin the search bar text box
 
   updateSearchText = (textInput) => {
     this.setState({
-        searchText: textInput
+        searchText: textInput.target.value
     });
   }
 
-  // updateSearchYear = (e) => {
-  //   this.setState({
-  //     searchYear: e
-  //   });
-  // }
+ 
 
+  //functions are passed to the searchbar, and the data which is retrieved is passed to the card list
 
   render() { 
 
-    console.log(this.state.searchText)
-
     return ( 
-      <div>
+      <div className={styles.appContainer}>
 
-        <p>The App</p>
-        <Searchbar />
-        <Cardlist />
-
- 
-         
-        
-        <input type="text" placeholder="enter a search word" onInput={(e) => this.updateSearchText(e.target.value)} />
-
-        <button onClick={this.fetchMovies}>Fetch info from Api</button>
-
-        {this.state.films.map((film, index) => {
-          return (
-            <section key={index}>
-            <h2>Title: {film.Title}</h2>
-            <p>Year: {film.Year}</p>
-            <p>IMDB ID: {film.imdbID}</p>
-            <p>Type: {film.Type}</p>
-            <img src={film.Poster} alt="poster"/>
-            </section>
-          )
-        })}
+        <h1>Movie Database</h1>
+        <h3>Enter a word and see what comes back!</h3>
+        <Searchbar updateSearchText={this.updateSearchText} handleClick={this.fetchMovies} />
+        <Cardlist films={this.state.films}/>
 
       </div>
 
