@@ -14,12 +14,12 @@ class Card extends Component {
       
         {/* this section outlines the construct for which the information will be displayed in each film card */}
         
-        <section>
-          <h2>Title: {film.Title}</h2>
-          <p>Year: {film.Year}</p>
-          <p>IMDB ID: {film.imdbID}</p>
-          <p>Type: {film.Type}</p>
-          <img src={film.Poster} alt="poster"/>
+        <section className={styles.theCard}>
+          <h2 className={styles.theCardTitle}>{film.Title}</h2>
+          <p className={styles.theCardYear}>Year: {film.Year}</p>
+          <p className={styles.theCardID}>IMDB ID: {film.imdbID}</p>
+          <p className={styles.theCardType}>Type: {film.Type}</p>
+          <img src={film.Poster} alt="poster" className={styles.theCardPoster}/>
         </section>
 
       </div>

@@ -11,9 +11,7 @@ class Cardlist extends Component {
 
     return ( 
       
-      <div>
-
-        <p className={styles.cardlist}>Cardlist</p>
+      <div className={styles.arrangeCards}>
     
         {/* this data of the films passed down as props is mapped over, and each film is passed into an individual card template, to be rendered on the page. */}
         

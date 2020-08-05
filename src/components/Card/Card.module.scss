@@ -1,3 +1,44 @@
-.card {
-  color: pink;
+.theCard {
+  border: blue solid 2px;
+  width: 270px;
+  height: 400px;
+  margin: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(189, 189, 192);
+
+  .theCardTitle {
+    
+    background-color: rgb(189, 189, 192);
+    border-bottom: blue solid 2px;
+  }
+
+  .theCardYear {
+    background-color: rgb(226, 240, 235);
+    border-bottom: rgb(109, 109, 126) solid 1px;
+  }
+
+  .theCardID {
+    background-color:  rgb(226, 240, 235);
+    border-bottom: rgb(109, 109, 126) solid 1px;
+  }
+
+  .theCardType {
+    background-color: rgb(226, 240, 235);
+    border-bottom: rgb(109, 109, 126) solid 1px;
+    
+  }
+
+  .theCardPoster {
+    
+    height: 250px;
+    object-fit: scale-down;
+    background-color: rgb(189, 189, 192);
+    border: none;
+    margin: auto;
+    
+  }
+
 }

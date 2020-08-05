@@ -1,3 +1,27 @@
 .search {
-  color: blue;
+  border: solid blue 1px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: rgb(189, 189, 192);
+  border-radius: 3px;
+
+  input {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: white 2px solid;
+    min-width: 170px;
+  }
+
+  button {
+    padding: 5px;
+    border-radius: 3px;
+    border: white 2px solid;
+
+    &:hover {
+      background-color: white;
+      border: rgb(158, 158, 255) 2px solid;
+      cursor: pointer;
+    }
+  }
 }

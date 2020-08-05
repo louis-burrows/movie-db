@@ -5,13 +5,12 @@ class Searchbar extends Component {
   state = {  }
   render() { 
     return ( 
-      <div>
+      <div className={styles.search}>
 
         {/* functions are passed to both the input box and button, and these will run in App.jsx and set the state in App */}
 
-        <p className={styles.search}>Searchbar</p>
-        <input type="text" onInput={this.props.updateSearchText} />
-        <button onClick={this.props.handleClick}>Fetch info from Api</button>
+        <input placeholder="Type in your search word(s)" type="text" onInput={this.props.updateSearchText} />
+        <button onClick={this.props.handleClick}>Display the results!</button>
       </div>
      );
   }

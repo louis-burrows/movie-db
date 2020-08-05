@@ -61,9 +61,10 @@ class MovieDB extends Component {
 
     return ( 
       <div className={styles.appContainer}>
-
-        <h1>Movie Database</h1>
-        <h3>Enter a word and see what comes back!</h3>
+        <div className={styles.titleContainer}>
+          <h1 className={styles.mainTitle}>Movie Database</h1>
+          <h3 className={styles.subTitle}>Enter a word and marvel at what comes back!</h3>
+        </div>
         <Searchbar updateSearchText={this.updateSearchText} handleClick={this.fetchMovies} />
         <Cardlist films={this.state.films}/>
 
