@@ -59,8 +59,6 @@ class MovieDB extends Component {
         
         <input type="text" placeholder="enter a search word" onInput={(e) => this.updateSearchText(e.target.value)} />
 
-        {/* <input type="text" placeholder="enter a year" onInput={(e) => updateSearchYear(e.target.value)}/> */}
-
         <button onClick={this.fetchMovies}>Fetch info from Api</button>
 
         {this.state.films.map((film, index) => {

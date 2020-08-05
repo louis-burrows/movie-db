@@ -8,6 +8,7 @@ class Cardlist extends Component {
     return ( 
       <div>
         <p className={styles.cardlist}>Cardlist</p>
+        
         <Card />
       </div>
      );
