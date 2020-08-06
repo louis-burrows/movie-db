@@ -33,7 +33,7 @@ class MovieDB extends Component {
   // this function grabs data from the API in accordance to the text entered in the searchbar, and is run when the button is pressed
 
   fetchMovies = () => {
-    fetch(`http://www.omdbapi.com/?s=${this.state.searchText}&apikey=2e1d8a0d`)
+    fetch(`https://www.omdbapi.com/?s=${this.state.searchText}&apikey=2e1d8a0d`)
     .then(response => response.json())
     .then(data => {
       console.log(data.Search)
